@@ -17,3 +17,8 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+/* Routes for admin home  */
+Route.group(() => {
+    Route.resource('/', 'HomeController');
+}).namespace('Admin').prefix('admin');
