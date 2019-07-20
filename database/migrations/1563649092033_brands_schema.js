@@ -7,6 +7,8 @@ class BrandsSchema extends Schema {
   up () {
     this.create('brands', (table) => {
       table.increments()
+      table.string('name').unique()
+      table.text('description').nullable()
       table.timestamps()
     })
   }
