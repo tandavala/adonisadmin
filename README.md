@@ -1,5 +1,8 @@
 # Adonis fullstack application
 
+
+![Screenshot](https://github.com/tandavala/adonisadmin/blob/master/screenshot.png)
+
 This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
 
 1. Bodyparser
