@@ -19,9 +19,8 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 /* Routes for admin home  */
-Route.group(() => {
-    
-    Route.resource('/', 'HomeController');
-    Route.resource('/brands', 'BrandController');
 
-}).namespace('Admin').prefix('admin');
+Route.get('/admin', 'Admin/HomeController.index');
+
+Route.get('/brands/index', 'Admin/BrandController.index').as('brand.index');
+Route.get('/brand/:id', 'Admin/BrandController.show').as('brand.show');

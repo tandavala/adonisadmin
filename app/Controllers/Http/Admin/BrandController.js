@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Brand = use('App/Models/Brand')
+
 /**
  * Resourceful controller for interacting with brands
  */
@@ -18,6 +20,9 @@ class BrandController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const brands = await Brand.all();
+
+    return view.render('admin.brand.brands_list', { brands: brands.toJSON()});
   }
 
   /**
@@ -53,6 +58,8 @@ class BrandController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    const brand = await Brand.find(params.id)
+    return view.render('admin.brand.brands_edit', {brand: brand.toJSON()})
   }
 
   /**
