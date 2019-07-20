@@ -20,5 +20,8 @@ Route.on('/').render('welcome')
 
 /* Routes for admin home  */
 Route.group(() => {
+    
     Route.resource('/', 'HomeController');
+    Route.resource('/brands', 'BrandController');
+
 }).namespace('Admin').prefix('admin');
